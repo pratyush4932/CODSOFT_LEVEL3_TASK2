@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email Verified</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --primary: #22c55e;
+        --primary-hover: #16a34a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(1200px 500px at 50% -20%, #1f2937, transparent), var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      .card {
+        width: min(560px, 92vw);
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+        backdrop-filter: blur(6px);
+        text-align: center;
+      }
+      .icon {
+        width: 64px; height: 64px; border-radius: 999px;
+        margin: 4px auto 16px auto;
+        display: grid; place-items: center;
+        background: rgba(34,197,94,0.12);
+        border: 1px solid rgba(34,197,94,0.35);
+        color: var(--primary);
+      }
+      h1 {
+        margin: 0 0 8px 0;
+        font-size: clamp(22px, 4vw, 28px);
+        letter-spacing: 0.2px;
+      }
+      p { margin: 0 0 22px 0; color: var(--muted); }
+      button {
+        appearance: none; border: 0; cursor: pointer;
+        background: var(--primary);
+        color: #0b1220;
+        font-weight: 600;
+        padding: 12px 18px;
+        border-radius: 10px;
+        transition: background 0.15s ease, transform 0.05s ease;
+      }
+      button:hover { background: var(--primary-hover); }
+      button:active { transform: translateY(1px); }
+      .hint { margin-top: 10px; font-size: 12px; color: var(--muted); }
+      .link { color: #93c5fd; text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Success">
+          <path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>Email verified successfully</h1>
+      <p>Your email has been verified. You can now continue to the app.</p>
+      <button id="redirectBtn" type="button">Go to App</button>
+      <div class="hint">Click the button to continue to the app.</div>
+    </main>
+
+    
+    <script>
+      (function () {
+        
+        const CLIENT_URL ='https://tasknest-gts3.onrender.com';
+        const btn = document.getElementById('redirectBtn');
+        btn.addEventListener('click', function () {
+          window.location.href = CLIENT_URL;
+        });
+      })();
+    </script>
+  </body>
+</html>
